@@ -43,10 +43,10 @@
   "scripts": {
     "ng": "ng",
     "dev": "ng serve",
-    "build": "ng build --configuration production",
-    "build:dev": "ng build --configuration development",
+    "build": "npx ng build --configuration production",
+    "build:dev": "npx ng build --configuration development",
     "build:vercel": "npm run build && npm run postbuild",
-    "watch": "ng build --watch --configuration development",
+    "watch": "npx ng build --watch --configuration development",
     "test": "ng test",
     "start": "node dist/ngxpress/server/server.mjs",
     "start:prod": "NODE_ENV=production node dist/ngxpress/server/server.mjs",
@@ -79,6 +79,9 @@
     "@angular/platform-server": "^20.0.0",
     "@angular/router": "^20.0.0",
     "@angular/ssr": "^20.0.5",
+    "@angular/cli": "^20.0.5",
+    "@angular/build": "^20.0.5",
+    "@angular/compiler-cli": "^20.0.0",
     "@prisma/client": "^6.11.1",
     "@tailwindcss/postcss": "^4.1.11",
     "better-auth": "^1.2.12",
@@ -92,9 +95,6 @@
     "tslib": "^2.3.0"
   },
   "devDependencies": {
-    "@angular/build": "^20.0.5",
-    "@angular/cli": "^20.0.5",
-    "@angular/compiler-cli": "^20.0.0",
     "@types/express": "^5.0.3",
     "@types/jasmine": "~5.1.0",
     "@types/node": "^20.17.19",
