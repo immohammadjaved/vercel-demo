@@ -4,28 +4,12 @@
   "outputDirectory": "dist/ngxpress",
   "installCommand": "npm install",
   "framework": "angular",
-  "builds": [
-    {
-      "src": "dist/ngxpress/server/server.mjs",
-      "use": "@vercel/node",
-      "config": {
-        "includeFiles": [
-          "prisma/**",
-          "dist/ngxpress/server/**",
-          "dist/ngxpress/browser/**",
-          "src/assets/**",
-          "public/**",
-          "*.db"
-        ],
-        "maxDuration": 30
-      }
+  "functions": {
+    "dist/ngxpress/server/server.mjs": {
+      "maxDuration": 30
     }
-  ],
+  },
   "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "dist/ngxpress/server/server.mjs"
-    },
     {
       "src": "/(.*)",
       "dest": "dist/ngxpress/server/server.mjs"

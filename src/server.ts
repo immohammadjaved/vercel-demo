@@ -18,7 +18,6 @@ const browserDistFolder = join(import.meta.dirname, '../browser');
 const app = express();
 const angularApp = new AngularNodeAppEngine();
 
-
 app.use(cors());
 app.use(
   helmet.contentSecurityPolicy({
@@ -79,7 +78,7 @@ if (isMainModule(import.meta.url)) {
 }
 
 /**
- * Request handler used by the Angular CLI (for dev-server and during build) or Firebase Cloud Functions.
+ * Request handler used by Vercel serverless functions.
+ * This is the main export that Vercel will use.
  */
-export const reqHandler = createNodeRequestHandler(app);
-export default app;
+export default createNodeRequestHandler(app);
