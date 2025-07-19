@@ -16,7 +16,8 @@
           "src/assets/**",
           "public/**",
           "*.db"
-        ]
+        ],
+        "maxDuration": 30
       }
     }
   ],
@@ -32,10 +33,5 @@
   ],
   "env": {
     "NODE_ENV": "production"
-  },
-  "functions": {
-    "dist/ngxpress/server/server.mjs": {
-      "maxDuration": 30
-    }
   }
 } 
