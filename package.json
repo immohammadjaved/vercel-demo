@@ -43,7 +43,7 @@
   "scripts": {
     "ng": "ng",
     "dev": "ng serve",
-    "build": "npx ng build --configuration production",
+    "build": "npm install && npx ng build --configuration production",
     "build:dev": "npx ng build --configuration development",
     "build:vercel": "npm run build && npm run postbuild",
     "watch": "npx ng build --watch --configuration development",
