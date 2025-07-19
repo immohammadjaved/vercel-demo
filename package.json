@@ -44,10 +44,19 @@
     "ng": "ng",
     "dev": "ng serve",
     "build": "ng build --configuration production",
+    "build:dev": "ng build --configuration development",
+    "build:vercel": "npm run build && npm run postbuild",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "start": "node dist/ngxpress/server/server.mjs",
-    "postbuild": "prisma generate && cp prisma/dev.db dist/ngxpress/server/dev.db"
+    "start:prod": "NODE_ENV=production node dist/ngxpress/server/server.mjs",
+    "postbuild": "prisma generate && cp prisma/dev.db dist/ngxpress/server/dev.db",
+    "db:generate": "prisma generate",
+    "db:push": "prisma db push",
+    "db:studio": "prisma studio",
+    "db:reset": "prisma migrate reset",
+    "vercel-build": "npm run build:vercel",
+    "setup:prod": "node scripts/setup-production.js"
   },
   "prettier": {
     "overrides": [

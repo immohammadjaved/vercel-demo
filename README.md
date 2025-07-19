@@ -85,6 +85,65 @@ Get started with your own ngXpress project in minutes:
 
 ---
 
+## 🚀 Deploy to Vercel
+
+ngXpress is optimized for Vercel deployment with SQLite database - perfect for demo apps! No external database setup required.
+
+### Quick Deploy
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/angularcafe/ngxpress)
+
+### Manual Deployment
+
+1. **Push to GitHub:**
+   ```bash
+   git add .
+   git commit -m "Ready for Vercel deployment"
+   git push origin main
+   ```
+
+2. **Import to Vercel:**
+   - Go to [vercel.com/new](https://vercel.com/new)
+   - Import your GitHub repository
+   - Vercel will auto-detect Angular configuration
+
+3. **Configure Environment Variables:**
+   ```env
+   DATABASE_URL="file:./dev.db"
+   BETTER_AUTH_SECRET="your-super-secret-key-here"
+   BETTER_AUTH_URL="https://your-app.vercel.app"
+   NODE_ENV="production"
+   ```
+
+4. **Deploy:**
+   - Vercel will automatically deploy on push to main branch
+   - Each PR creates a preview deployment
+
+### Database Setup (SQLite)
+
+Perfect for demo apps - no external database needed!
+
+1. **SQLite Database:**
+   - Database file (`dev.db`) is included in your project
+   - Automatically copied to the correct location during build
+   - No external database setup required
+
+2. **No Schema Changes:**
+   - Prisma schema is already configured for SQLite
+   - No additional configuration needed
+
+3. **Ready to Use:**
+   - Database operations work immediately after deployment
+   - Perfect for showcasing your app
+
+### 📚 Detailed Deployment Guide
+
+For comprehensive deployment instructions, troubleshooting, and best practices, see:
+- **[DEPLOYMENT.md](DEPLOYMENT.md)** - Complete Vercel deployment guide
+- **[VERCEL_CHECKLIST.md](VERCEL_CHECKLIST.md)** - Pre-deployment checklist
+
+---
+
 ## 📦 What’s Included
 
 - **Beautiful SaaS Landing Page:** Modern, responsive, and ready to customize

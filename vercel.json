@@ -1,5 +1,9 @@
 {
   "version": 2,
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist/ngxpress",
+  "installCommand": "npm install",
+  "framework": "angular",
   "builds": [
     {
       "src": "dist/ngxpress/server/server.mjs",
@@ -10,6 +14,7 @@
           "dist/ngxpress/server/**",
           "dist/ngxpress/browser/**",
           "src/assets/**",
+          "public/**",
           "*.db"
         ]
       }
@@ -17,8 +22,20 @@
   ],
   "routes": [
     {
+      "src": "/api/(.*)",
+      "dest": "dist/ngxpress/server/server.mjs"
+    },
+    {
       "src": "/(.*)",
       "dest": "dist/ngxpress/server/server.mjs"
     }
-  ]
+  ],
+  "env": {
+    "NODE_ENV": "production"
+  },
+  "functions": {
+    "dist/ngxpress/server/server.mjs": {
+      "maxDuration": 30
+    }
+  }
 } 
