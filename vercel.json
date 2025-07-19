@@ -4,18 +4,10 @@
   "outputDirectory": "dist/ngxpress",
   "installCommand": "npm install",
   "framework": "angular",
-  "functions": {
-    "dist/ngxpress/server/server.mjs": {
-      "maxDuration": 30
-    }
-  },
-  "routes": [
+  "rewrites": [
     {
-      "src": "/(.*)",
-      "dest": "dist/ngxpress/server/server.mjs"
+      "source": "/(.*)",
+      "destination": "/api/server"
     }
-  ],
-  "env": {
-    "NODE_ENV": "production"
-  }
+  ]
 } 
